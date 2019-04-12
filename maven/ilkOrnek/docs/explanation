@@ -1,0 +1,15 @@
+                        GENEL YAPTIĞI İŞ
+    Bu örnek string içinde  ki html taglarını ayırt etmeye yarıyor.
+
+                        KOD AÇIKLAMASI
+    StringEscapeUtils.escapeHtml3(p)
+
+    Bu örneğimizde yukarıdaki kodun çalışması için pom.xml dosyasının depency tag'ları içine aşağı daki ifadeyi ekledik ki
+    import org.apache.commons.lang3.StringEscapeUtils; kütüphanesini import edebilelim
+
+    <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+          <dependency>
+              <groupId>org.apache.commons</groupId>
+              <artifactId>commons-lang3</artifactId>
+              <version>3.0</version>
+          </dependency>

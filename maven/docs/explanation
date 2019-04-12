@@ -1,0 +1,75 @@
+
+                                              MAVEN NEDİR
+    Proje geliştirirken bir standart oluşturmak , proje geliştirme süreçlerini kolaylaştırmak , IDE ve kütüphane bağımlılığını ortadan kaldırmak gibi
+    işlere yarayan build aracıdır.
+                                              KULLANIM ESNEKLİĞİ
+    Maven kalıbları bir standart haline geldiğinden IDE bağımlılığı gözetmeksizin projeleriz de kullanabilirsiniz.
+
+                                              BAĞIMLI KAYNAKLAR
+    Maven projesinde kullanılacak tüm kütüphaneler ve eklentiler POM 'da ( Project Object Model ) yönetilmektedir.
+    Maven kütüphane dosyalarını kendi local repository'sinde tutar.
+    Siz bir kütüphane eklemek istediğinizde önce sizin local repository'nizde arar ve eğer bulamazsa kendi sonucularında arar eğer kendi sonucularında da
+    bulamazsa sizin bu kütüphanenin sunucu adresini belirtmeniz gerekir ve bu belirttiğiniz yerdeki kütüphaneyi ekler eğer bu kütüphane ile ilişkile
+    başka kütüphaneler varsa maven onları da ekler.
+
+                                              DÖKÜMANTASTON
+    POM dosyası proje hakkında dökümantasyon da içermaktedir yani proja hakkında bilgi edinmek istersek POM dosyasına bakmamız yeterli olacaktır.
+
+                                              PROJE YAPILANDIRMA YÖNETİMİ
+    Projenizin Build veya  Deploy yapılandırmalarını pom ile rahatlıkla yönetebilirsiniz.
+    Sadece bir kaç satır kodla yapılandırmalar arasında geçişler yapabilirsiniz.
+    Örneğin büyük bir proje , farklı veritabanlarında yada farklı sunucu sistemlerinde eş zamanlı olarak çalışması gerekebilir.
+    Bunun için sırasında farklı yapılandırma ayarlarıyla sistemi güncellememiz gerekmektedir.
+    Her bir sistem için yapılandırma ayarlarını yamak yorucu bir iştir.
+    işte buruda POM dosyadında yaptığımız yapılandırma ayarları işimize yarıyor.
+    sadece yapılandırma adını değiştirerek proje çıktımızı farklı sistemlere uygun hale getirebiliriz.
+
+                                              SÜRÜM YÖNETİMİ
+    Her maven projesinin bir grupId 'si, bir yapı id 'si ve bir sürüm numarası vardır.
+    projenin farklı sürümlerini saklayabilir ve bunları daha sonra kullabiliriz.
+
+                                              POM DOSYASININ TAG'LARI
+    Project : Maven'in hangi versiyonları ve ayarları kullanacağını belirtir ve kök elemanıdır.
+
+    Model Version : Maven versiyonunu belirtir.
+
+    Packaging : Projemizin paketleme Türünü Belirtir. EAR, WAR, JAR gibi değerler alabilir.
+
+    Name : Projemizin adını belirtir.
+
+    Url : Projemizi paylaşmak istediğimizde  veya sunucuya göndermek istediğimizde buraya yazacağımız adrese gönderilir.
+
+    Dependency  : Projemizde kullanacağımız her bir kütüphane bir dependency yani bağımlılıktır.
+
+    Scope : Bir bağımlılığın projenin hangi yapılandırmasında kullanılacağını belirtir.
+    yazılması zorunlu değildir, sadece her yapılandırma sırasında kullanılmasını sağlamış oluruz.
+
+    Build : Projemizin yapılandırma ayarlarını ve kullacağımız etkenleri tanımlayabileceğimiz kısımdır.
+
+    Ek bir bilgi olarak, projemizde özel kütüphaneler kullanmak isteyebilir ve bunları paylaşmak istemeyebiliriz. Bu durumda proje içerisine bu kütüphane dosyalarını ekler ve bunları POM dosyasında tanıtabiliriz, örneğin:
+
+    <dependency>
+    <groupid>javax.sql</groupid>
+    <artifactid>rowset</artifactid>
+    <version>1.0.1</version>
+    <scope>system</scope>
+    <systempath>${basedir}/lib/rowset.jar</systempath>
+    </dependency>
+
+    Burada ${basedir}, POM dosyasının bulunduğu dizini belirtir.
+    Yani kök dizindir.
+
+                                            MAVEN KOMUTLARI
+    Clean : Projenin derlenmesi sırasında oluşan target klasörünün silinmesini sağlar.
+    Validate : Projenin target dosyasını siler ve daha sonra hatalı kısımları tarar.
+    Compile : Projeyi clean ve validate eder, daha sonra derler.
+    Test : Projeyi derler ve test sınıflarını çalıştırır.
+    Package : Projeyi test eder eğer hata yoksa projeyi paketler.
+    Verify : Projeyi paketler ve daha sonra bu paketlerin geçerliliğini kontrol eder.
+    Install : Projeyi doğruladıktan  sonra repository sunucusuna yükler.
+    Deploy : Projeyi uygulama sunucusuna gönderir.
+
+
+
+
+
