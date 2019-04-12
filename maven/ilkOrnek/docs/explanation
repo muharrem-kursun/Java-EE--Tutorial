@@ -4,8 +4,8 @@
                         KOD AÇIKLAMASI
     StringEscapeUtils.escapeHtml3(p)
 
-    Bu örneğimizde yukarıdaki kodun çalışması için pom.xml dosyasının depency tag'ları içine aşağı daki ifadeyi ekledik ki
-    import org.apache.commons.lang3.StringEscapeUtils; kütüphanesini import edebilelim
+    Bu örneğimizde yukarıdaki kodun çalışması için pom.xml dosyasının dependency tag'ları içine aşağı daki ifadeyi ekledik ki
+    import org.apache.commons.lang3.StringEscapeUtils; kütüphanesini import edebilelim.
 
     <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
           <dependency>
